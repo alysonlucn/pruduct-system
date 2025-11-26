@@ -19,14 +19,13 @@ export class Product {
     description: string;
 
     @OneToMany(() => CartItem, (cartItem) => cartItem.product)
-    cartItems: CartItem[];
+    cartItems!: CartItem[];
 
-    constructor(id: number, name: string, price: number, stock: number, description?: string, CartItems?: CartItem[]) {
+    constructor(id: number, name: string, price: number, stock: number, description?: string) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.stock = stock;
         this.description = description || '';
-        this.cartItems = CartItems || [];
     }
 }

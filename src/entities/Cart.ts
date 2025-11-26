@@ -13,12 +13,11 @@ export class Cart {
     updatedAt: Date;
 
     @OneToMany(() => CartItem, (cartItem) => cartItem.cart)
-    cartItems: CartItem[];
+    cartItems!: CartItem[];
 
-    constructor(id: number, createdAt: Date, updatedAt: Date, cartItems?: CartItem[]) {
+    constructor(id: number, createdAt: Date, updatedAt: Date) {
         this.id = id;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
-        this.cartItems = cartItems || [];
     }
 }
